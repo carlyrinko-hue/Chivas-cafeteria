@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chivas Cafetería — Pital &amp; Muelle, San Carlos</title>
+<meta name="description" content="Chivas Cafetería — café de especialidad, repostería y más en Pital y Muelle, San Carlos, Costa Rica.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Jost:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --yellow: #FCC52A;
+    --yellow-deep: #E9AE0E;
+    --espresso: #3F2B06;
+    --espresso-soft: #5B4018;
+    --roast: #7A5636;
+    --cream: #FBF3E2;
+    --cream-deep: #F3E6C9;
+    --cherry: #AE4A2E;
+    --line: rgba(63,43,6,0.14);
+    --white: #FFFEFB;
+
+    --display: 'Fraunces', serif;
+    --label: 'Jost', sans-serif;
+    --body: 'Inter', sans-serif;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--espresso);
+    font-family:var(--body);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  .container{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 28px;
+  }
+  .eyebrow{
+    font-family:var(--label);
+    text-transform:uppercase;
+    letter-spacing:0.22em;
+    font-size:0.72rem;
+    font-weight:500;
+    color:var(--cherry);
+  }
+  h1,h2,h3{
+    font-family:var(--display);
+    font-weight:600;
+    margin:0 0 0.4em;
+    color:var(--espresso);
+    letter-spacing:-0.01em;
+  }
+  section{position:relative;}
+
+  /* reduced motion */
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; transition-duration:0.001ms !important;}
+  }
+
+  /* ============ NAV ============ */
+  .nav{
+    position:sticky; top:0; z-index:100;
+    background:rgba(251,243,226,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:10px 28px;
+    max-width:1180px; margin:0 auto;
+  }
+  .brand{
+    display:flex; align-items:center; gap:10px;
+    text-decoration:none;
+  }
+  .brand img{
+    height:42px; width:auto;
+  }
+  .brand-name{
+    font-family:var(--label);
+    font-weight:600;
+    letter-spacing:0.06em;
+    font-size:1rem;
+    color:var(--espresso);
+    text-transform:uppercase;
+  }
+  .nav-links{
+    display:flex; gap:28px; list-style:none; margin:0; padding:0;
+    font-family:var(--label);
+    font-size:0.85rem;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+  }
+  .nav-links li{ margin-left:28px; }
+  .nav-links li:first-child{ margin-left:0; }
+  .nav-links a{
+    text-decoration:none;
+    color:var(--espresso-soft);
+    border-bottom:2px solid transparent;
+    padding-bottom:4px;
+    transition:border-color .2s, color .2s;
+  }
+  .nav-links a:hover{ color:var(--cherry); border-color:var(--cherry); }
+
+  .nav-right{ display:flex; align-items:center; gap:14px; }
+
+  .lang-toggle{
+    display:flex; border:1.5px solid var(--espresso); border-radius:999px;
+    overflow:hidden; font-family:var(--label); font-size:0.78rem; font-weight:600;
+    letter-spacing:0.05em;
+  }
+  .lang-toggle button{
+    border:none; background:transparent; padding:6px 14px; cursor:pointer;
+    color:var(--espresso); font-family:var(--label); font-weight:600; letter-spacing:.05em;
+  }
+  .lang-toggle button.active{ background:var(--espresso); color:var(--yellow); }
+
+  .burger{ display:none; background:none; border:none; cursor:pointer; padding:6px; }
+  .burger span{ display:block; width:24px; height:2px; background:var(--espresso); margin:5px 0; }
+
+  @media (max-width: 860px){
+    .nav-links{
+      position:fixed; inset:64px 0 0 0; background:var(--cream); flex-direction:column;
+      padding:32px 28px; gap:22px; font-size:1.1rem; transform:translateX(100%);
+      transition:transform .3s ease; height:100vh;
+    }
+    .nav-links.open{ transform:translateX(0); }
+    .burger{ display:block; }
+    .brand-name{ display:none; }
+  }
+
+  /* ============ HERO ============ */
+  .hero{
+    position:relative;
+    min-height:clamp(540px, 78vh, 760px);
+    display:flex; align-items:flex-end;
+    background:
+      linear-gradient(180deg, rgba(30,19,4,0.35) 0%, rgba(24,15,3,0.55) 55%, rgba(20,12,2,0.88) 100%),
+      url('assets/hero.jpg') center 30% / cover no-repeat;
+  }
+  .hero-inner{
+    padding:0 28px 64px;
+    max-width:1180px; margin:0 auto; width:100%;
+    color:var(--cream);
+  }
+  .hero .eyebrow{ color:var(--yellow); }
+  .hero h1{
+    color:var(--white);
+    font-size:clamp(2.4rem, 6vw, 4.4rem);
+    line-height:1.02;
+    max-width:16ch;
+    margin-top:0.3em;
+  }
+  .hero p{
+    max-width:46ch;
+    font-size:1.08rem;
+    color:#EFE6D2;
+    margin:0.6em 0 1.8em;
+  }
+  .hero-ctas{ display:flex; gap:14px; flex-wrap:wrap; }
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:var(--label); font-weight:600; letter-spacing:0.03em;
+    text-transform:uppercase; font-size:0.82rem;
+    padding:14px 26px; border-radius:999px; text-decoration:none;
+    border:1.5px solid transparent; cursor:pointer;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn:hover{ transform:translateY(-2px); }
+  .btn-primary{ background:var(--yellow); color:var(--espresso); }
+  .btn-primary:hover{ box-shadow:0 8px 20px rgba(252,197,42,0.35); }
+  .btn-outline{ border-color:rgba(251,243,226,0.6); color:var(--cream); }
+  .btn-outline:hover{ border-color:var(--cream); }
+  .btn-dark{ background:var(--espresso); color:var(--yellow); }
+  .btn-dark:hover{ box-shadow:0 8px 20px rgba(63,43,6,0.3); }
+
+  /* bean divider */
+  .bean-divider{
+    display:flex; justify-content:center; padding:34px 0;
+    background:var(--cream);
+  }
+  .bean-divider svg{ width:120px; height:auto; }
+  .bean-divider.on-dark{ background:var(--espresso); }
+
+  /* ============ STORY ============ */
+  .story{
+    background:var(--espresso);
+    color:var(--cream);
+    padding:90px 0;
+    overflow:hidden;
+  }
+  .story-grid{
+    display:grid; grid-template-columns:0.85fr 1.15fr; gap:56px; align-items:center;
+  }
+  .story-goat{ display:flex; justify-content:center; }
+  .story-goat svg{ width:100%; max-width:280px; height:auto; }
+  .story h2{ color:var(--yellow); font-size:clamp(1.8rem,3.4vw,2.6rem); }
+  .story p{
+    font-size:1.08rem; color:#EFE3C7; max-width:56ch; margin:0 0 1em;
+  }
+  .story .eyebrow{ color:var(--yellow); }
+  @media (max-width: 860px){
+    .story-grid{ grid-template-columns:1fr; text-align:center; }
+    .story p{ margin-left:auto; margin-right:auto; }
+  }
+
+  /* ============ GALLERY ============ */
+  .gallery{ padding:90px 0 80px; background:var(--cream); }
+  .gallery-grid{
+    columns:4 220px;
+    column-gap:14px;
+  }
+  .gallery-grid figure{
+    margin:0 0 14px; break-inside:avoid;
+    border-radius:14px; overflow:hidden;
+    position:relative; cursor:pointer;
+    background:var(--cream-deep);
+  }
+  .gallery-grid img{
+    width:100%; height:auto; display:block;
+    transition:transform .35s ease;
+  }
+  .gallery-grid figure:hover img{ transform:scale(1.05); }
+  .gallery-grid figure::after{
+    content:'';
+    position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(63,43,6,0) 60%, rgba(63,43,6,0.35) 100%);
+    opacity:0; transition:opacity .25s ease;
+  }
+  .gallery-grid figure:hover::after{ opacity:1; }
+  @media (max-width:700px){
+    .gallery-grid{ columns:2 160px; }
+  }
+  .gallery-empty{
+    text-align:center; color:var(--roast); font-size:0.95rem;
+    padding:30px; border:1.5px dashed var(--line); border-radius:14px;
+  }
+
+  .gallery-lightbox{
+    display:none; position:fixed; inset:0; z-index:1000;
+    background:rgba(20,12,2,0.94);
+    align-items:center; justify-content:center;
+  }
+  .gallery-lightbox.open{ display:flex; }
+  .gallery-lightbox img{
+    max-width:88vw; max-height:84vh; border-radius:8px;
+    box-shadow:0 20px 60px rgba(0,0,0,0.5);
+  }
+  .lb-close{
+    position:absolute; top:22px; right:28px;
+    background:none; border:none; color:var(--cream);
+    font-size:2.2rem; line-height:1; cursor:pointer;
+  }
+  .lb-prev, .lb-next{
+    position:absolute; top:50%; transform:translateY(-50%);
+    background:rgba(251,243,226,0.12); border:none; color:var(--cream);
+    font-size:1.3rem; width:48px; height:48px; border-radius:50%;
+    cursor:pointer; transition:background .2s;
+  }
+  .lb-prev:hover, .lb-next:hover{ background:rgba(251,243,226,0.25); }
+  .lb-prev{ left:20px; }
+  .lb-next{ right:20px; }
+  @media (max-width:700px){
+    .lb-prev, .lb-next{ width:40px; height:40px; font-size:1.05rem; }
+    .lb-close{ top:14px; right:16px; font-size:1.9rem; }
+  }
+
+  /* ============ LOCATIONS ============ */
+  .locations{ padding:90px 0 70px; }
+  .section-head{ text-align:center; max-width:640px; margin:0 auto 48px; }
+  .section-head h2{ font-size:clamp(1.9rem,3.6vw,2.6rem); }
+  .section-head p{ color:var(--roast); font-size:1.05rem; }
+
+  .loc-grid{
+    display:grid; grid-template-columns:1fr 1fr; gap:26px;
+  }
+  .loc-card{
+    background:var(--white); border:1px solid var(--line); border-radius:18px;
+    padding:32px; position:relative;
+  }
+  .loc-card .tag{
+    font-family:var(--label); text-transform:uppercase; letter-spacing:0.08em;
+    font-size:0.72rem; color:var(--white); background:var(--cherry);
+    display:inline-block; padding:5px 12px; border-radius:999px; margin-bottom:16px;
+  }
+  .loc-card h3{ font-size:1.7rem; margin-bottom:4px; }
+  .loc-card .hours{ margin:18px 0; }
+  .loc-card .hours-row{
+    display:flex; justify-content:space-between; font-size:0.95rem;
+    padding:7px 0; border-bottom:1px dashed var(--line);
+  }
+  .loc-card .hours-row:last-child{ border-bottom:none; }
+  .loc-card .addr{
+    font-size:0.94rem; color:var(--roast); margin:14px 0 20px; line-height:1.5;
+  }
+  .loc-actions{ display:flex; gap:10px; flex-wrap:wrap; }
+  .loc-actions .btn{ padding:11px 18px; font-size:0.75rem; }
+  @media (max-width: 860px){ .loc-grid{ grid-template-columns:1fr; } }
+
+  /* ============ MENU ============ */
+  .menu-section{ background:var(--cream-deep); padding:90px 0 100px; }
+  .menu-toggle{
+    display:flex; justify-content:center; margin-bottom:14px;
+  }
+  .seg{
+    display:inline-flex; background:var(--white); border:1.5px solid var(--espresso);
+    border-radius:999px; padding:4px; gap:4px;
+  }
+  .seg button{
+    font-family:var(--label); font-weight:600; letter-spacing:0.04em; text-transform:uppercase;
+    font-size:0.85rem; border:none; background:transparent; color:var(--espresso);
+    padding:10px 26px; border-radius:999px; cursor:pointer; transition:background .2s,color .2s;
+  }
+  .seg button.active{ background:var(--espresso); color:var(--yellow); }
+
+  .menu-note{ text-align:center; color:var(--roast); font-size:0.88rem; margin:8px 0 40px; }
+
+  .cat-pills{
+    display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-bottom:44px;
+  }
+  .cat-pills button{
+    font-family:var(--label); font-size:0.78rem; letter-spacing:0.03em; text-transform:uppercase;
+    padding:9px 16px; border-radius:999px; border:1px solid var(--espresso);
+    background:transparent; color:var(--espresso); cursor:pointer; transition:.2s;
+  }
+  .cat-pills button.active{ background:var(--yellow); border-color:var(--yellow); }
+
+  .menu-grid{ display:grid; grid-template-columns:1fr 1fr; gap:0 56px; }
+  .menu-cat{ margin-bottom:38px; break-inside:avoid; }
+  .menu-cat h3{
+    font-family:var(--label); text-transform:uppercase; letter-spacing:0.06em;
+    font-size:1rem; font-weight:600; color:var(--cherry);
+    border-bottom:2px solid var(--espresso); padding-bottom:8px; margin-bottom:18px;
+  }
+  .menu-item{
+    display:flex; justify-content:space-between; gap:14px;
+    padding:12px 0; border-bottom:1px dotted var(--line);
+  }
+  .menu-item:last-child{ border-bottom:none; }
+  .mi-left{ max-width:72%; }
+  .mi-name{ font-weight:600; font-size:1.02rem; }
+  .mi-desc{ font-size:0.86rem; color:var(--roast); margin-top:2px; }
+  .mi-right{ text-align:right; white-space:nowrap; font-family:var(--label); }
+  .mi-crc{ font-weight:600; }
+  .mi-usd{ font-size:0.78rem; color:var(--roast); }
+  .mi-two{ font-size:0.88rem; }
+
+  @media (max-width:860px){
+    .menu-grid{ grid-template-columns:1fr; }
+    .mi-left{ max-width:66%; }
+  }
+
+  /* ============ FOOTER ============ */
+  footer{ background:var(--espresso); color:var(--cream); padding:56px 0 30px; }
+  .footer-top{
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:36px; margin-bottom:36px;
+  }
+  .footer-brand{ display:flex; align-items:center; gap:12px; }
+  .footer-brand img{ height:46px; }
+  .footer-brand span{
+    font-family:var(--label); text-transform:uppercase; letter-spacing:0.06em; font-weight:600;
+  }
+  .footer-links{ display:flex; gap:14px; }
+  .footer-links a{
+    display:inline-flex; align-items:center; gap:8px; text-decoration:none; color:var(--cream);
+    border:1px solid rgba(251,243,226,0.3); padding:9px 16px; border-radius:999px;
+    font-family:var(--label); font-size:0.82rem;
+  }
+  .footer-links a:hover{ border-color:var(--yellow); color:var(--yellow); }
+  .footer-bottom{
+    border-top:1px solid rgba(251,243,226,0.15); padding-top:22px;
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+    font-size:0.8rem; color:#C9BB9C;
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="brand">
+      <img src="assets/goat-circle-brown.png" alt="Chivas Cafetería" class="brand-logo-img">
+      <span class="brand-name">Chivas Cafetería</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#historia" data-i18n="nav.story">Nuestra historia</a></li>
+      <li><a href="#galeria" data-i18n="nav.gallery">Fotos</a></li>
+      <li><a href="#ubicaciones" data-i18n="nav.locations">Ubicaciones</a></li>
+      <li><a href="#menu" data-i18n="nav.menu">Menú</a></li>
+      <li><a href="#contacto" data-i18n="nav.contact">Contacto</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang-toggle">
+        <button id="btnES" class="active" onclick="setLang('es')">ES</button>
+        <button id="btnEN" onclick="setLang('en')">EN</button>
+      </div>
+      <button class="burger" id="burgerBtn" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <div class="hero-inner">
+    <div class="eyebrow" data-i18n="hero.eyebrow">Pital &amp; Muelle · San Carlos, Costa Rica</div>
+    <h1 data-i18n="hero.title">Café de verdad, hecho con calma en Pital</h1>
+    <p data-i18n="hero.sub">Espresso de especialidad, repostería casera y buena compañía — ahora en dos rincones de San Carlos.</p>
+    <div class="hero-ctas">
+      <a href="#menu" class="btn btn-primary" data-i18n="hero.cta1">Ver el menú</a>
+      <a href="https://wa.me/50687854602" target="_blank" rel="noopener" class="btn btn-outline" data-i18n="hero.cta2">Escribir por WhatsApp</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ GALLERY ============ -->
+<section class="gallery" id="galeria">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow" data-i18n="gal.eyebrow">Un vistazo</div>
+      <h2 data-i18n="gal.title">Así se vive Chivas</h2>
+      <p data-i18n="gal.sub">Un poco de lo que te espera adentro, afuera y en la taza.</p>
+    </div>
+    <div class="gallery-grid" id="galleryGrid">
+      <!-- photo items injected here -->
+    </div>
+  </div>
+</section>
+
+<div class="gallery-lightbox" id="lightbox">
+  <button class="lb-close" id="lbClose" aria-label="Close">&times;</button>
+  <button class="lb-prev" id="lbPrev" aria-label="Previous">&#10094;</button>
+  <img id="lbImg" src="" alt="">
+  <button class="lb-next" id="lbNext" aria-label="Next">&#10095;</button>
+</div>
+
+<!-- ============ LOCATIONS ============ -->
+<section class="locations" id="ubicaciones">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow" data-i18n="loc.eyebrow">Dónde encontrarnos</div>
+      <h2 data-i18n="loc.title">Dos casas, un mismo café</h2>
+      <p data-i18n="loc.sub">Cada local tiene su propio horario y su propio menú — revisá el de tu zona.</p>
+    </div>
+    <div class="loc-grid">
+      <div class="loc-card">
+        <span class="tag">PITAL</span>
+        <h3>Chivas Pital</h3>
+        <div class="hours">
+          <div class="hours-row"><span data-i18n="loc.monfri">Lunes – Viernes</span><span>10:00am – 7:00pm</span></div>
+          <div class="hours-row"><span data-i18n="loc.satsun">Sábado – Domingo</span><span>1:00pm – 7:00pm</span></div>
+        </div>
+        <div class="addr" data-i18n="loc.pital.addr">Contiguo al laboratorio CCSS, Pital, San Carlos, Alajuela, 21006.</div>
+        <div class="loc-actions">
+          <a class="btn btn-dark" href="https://www.google.com/maps/search/?api=1&query=Contiguo+al+laboratorio+CCSS%2C+Pital%2C+San+Carlos%2C+Alajuela" target="_blank" rel="noopener" data-i18n="loc.map">Cómo llegar</a>
+          <a class="btn btn-outline" style="border-color:var(--espresso);color:var(--espresso);" href="#menu" onclick="setLoc('pital')" data-i18n="loc.viewmenu">Ver menú de Pital</a>
+        </div>
+      </div>
+      <div class="loc-card">
+        <span class="tag">MUELLE</span>
+        <h3>Chivas Muelle</h3>
+        <div class="hours">
+          <div class="hours-row"><span data-i18n="loc.alldays">Lunes – Domingo</span><span>10:00am – 7:00pm</span></div>
+        </div>
+        <div class="addr" data-i18n="loc.muelle.addr">FH5H+RWV, Provincia de Alajuela, San Francisco.</div>
+        <div class="loc-actions">
+          <a class="btn btn-dark" href="https://www.google.com/maps/search/?api=1&query=FH5H%2BRWV%20Muelle%20San%20Carlos%20Alajuela%20Costa%20Rica" target="_blank" rel="noopener" data-i18n="loc.map">Cómo llegar</a>
+          <a class="btn btn-outline" style="border-color:var(--espresso);color:var(--espresso);" href="#menu" onclick="setLoc('muelle')" data-i18n="loc.viewmenu2">Ver menú de Muelle</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MENU ============ -->
+<section class="menu-section" id="menu">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow" data-i18n="menu.eyebrow">El menú</div>
+      <h2 data-i18n="menu.title">¿Qué te vas a tomar hoy?</h2>
+    </div>
+
+    <div class="menu-toggle">
+      <div class="seg">
+        <button id="locPitalBtn" class="active" onclick="setLoc('pital')">Pital</button>
+        <button id="locMuelleBtn" onclick="setLoc('muelle')">Muelle</button>
+      </div>
+    </div>
+    <div class="menu-note" data-i18n="menu.fx">Precios en colones (₡). El monto en dólares es una referencia aproximada (₡520 ≈ $1), no un tipo de cambio oficial.</div>
+
+    <div class="cat-pills" id="catPills"></div>
+    <div class="menu-grid" id="menuGrid"></div>
+  </div>
+</section>
+
+<div class="bean-divider on-dark" style="background:var(--espresso);">
+  <svg viewBox="0 0 120 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="60" cy="30" rx="46" ry="26" stroke="#FCC52A" stroke-width="2.5"/>
+    <path d="M60 4C60 4 44 18 44 30C44 42 60 56 60 56" stroke="#FCC52A" stroke-width="2.5"/>
+  </svg>
+</div>
+
+<!-- ============ STORY ============ -->
+<section class="story" id="historia">
+  <div class="container story-grid">
+    <div class="story-goat">
+      <img src="assets/goat-circle-brown.png" alt="Chivas Cafetería" style="max-width:280px;width:100%;">
+    </div>
+    <div>
+      <div class="eyebrow" data-i18n="story.eyebrow">El origen del nombre</div>
+      <h2 data-i18n="story.title">Una cabra, un cafetal y una leyenda etíope</h2>
+      <p data-i18n="story.p1">Cuenta la leyenda que, hace cientos de años en Etiopía, un pastor de cabras descubrió el café al notar que sus cabras tenían mucha más energía después de comer el fruto de esa planta.</p>
+      <p data-i18n="story.p2">Por eso quisimos darle el crédito a la cabra — y así nació el nombre Chivas: una cafetería que le debe su historia a un animal curioso y a un grano que cambió el mundo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer id="contacto">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="assets/goat-circle-brown.png" alt="Chivas Cafetería" class="brand-logo-img">
+        <span>Chivas Cafetería</span>
+      </div>
+      <div class="footer-links">
+        <a href="https://wa.me/50687854602" target="_blank" rel="noopener">WhatsApp · 8785-4602</a>
+        <a href="https://instagram.com/chivascafeteria" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-i18n="footer.tagline">Pital &amp; Muelle, San Carlos, Costa Rica.</span>
+      <span data-i18n="footer.note">Incluye 13% IVA. No incluye 10% de servicio.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   I18N — static UI strings
+   ============================================================ */
+const I18N = {
+  es:{
+    "nav.story":"Nuestra historia",
+    "nav.gallery":"Fotos",
+    "nav.locations":"Ubicaciones",
+    "nav.menu":"Menú",
+    "nav.contact":"Contacto",
+    "hero.eyebrow":"Pital &amp; Muelle · San Carlos, Costa Rica",
+    "hero.title":"Café de verdad, hecho con calma en Pital",
+    "hero.sub":"Espresso de especialidad, repostería casera y buena compañía — ahora en dos rincones de San Carlos.",
+    "hero.cta1":"Ver el menú",
+    "hero.cta2":"Escribir por WhatsApp",
+    "story.eyebrow":"El origen del nombre",
+    "story.title":"Una cabra, un cafetal y una leyenda etíope",
+    "story.p1":"Cuenta la leyenda que, hace cientos de años en Etiopía, un pastor de cabras descubrió el café al notar que sus cabras tenían mucha más energía después de comer el fruto de esa planta.",
+    "story.p2":"Por eso quisimos darle el crédito a la cabra — y así nació el nombre Chivas: una cafetería que le debe su historia a un animal curioso y a un grano que cambió el mundo.",
+    "gal.eyebrow":"Un vistazo",
+    "gal.title":"Así se vive Chivas",
+    "gal.sub":"Un poco de lo que te espera adentro, afuera y en la taza.",
+    "loc.eyebrow":"Dónde encontrarnos",
+    "loc.title":"Dos casas, un mismo café",
+    "loc.sub":"Cada local tiene su propio horario y su propio menú — revisá el de tu zona.",
+    "loc.monfri":"Lunes – Viernes",
+    "loc.satsun":"Sábado – Domingo",
+    "loc.alldays":"Lunes – Domingo",
+    "loc.pital.addr":"Contiguo al laboratorio CCSS, Pital, San Carlos, Alajuela, 21006.",
+    "loc.muelle.addr":"FH5H+RWV, Provincia de Alajuela, San Francisco.",
+    "loc.map":"Cómo llegar",
+    "loc.viewmenu":"Ver menú de Pital",
+    "loc.viewmenu2":"Ver menú de Muelle",
+    "menu.eyebrow":"El menú",
+    "menu.title":"¿Qué te vas a tomar hoy?",
+    "menu.fx":"Precios en colones (₡). El monto en dólares es una referencia aproximada (₡520 ≈ $1), no un tipo de cambio oficial.",
+    "footer.tagline":"Pital &amp; Muelle, San Carlos, Costa Rica.",
+    "footer.note":"Incluye 13% IVA. No incluye 10% de servicio."
+  },
+  en:{
+    "nav.story":"Our Story",
+    "nav.gallery":"Photos",
+    "nav.locations":"Locations",
+    "nav.menu":"Menu",
+    "nav.contact":"Contact",
+    "hero.eyebrow":"Pital &amp; Muelle · San Carlos, Costa Rica",
+    "hero.title":"Real coffee, made unhurried in Pital",
+    "hero.sub":"Specialty espresso, homemade pastries, and good company — now in two corners of San Carlos.",
+    "hero.cta1":"See the menu",
+    "hero.cta2":"Message us on WhatsApp",
+    "story.eyebrow":"Where the name comes from",
+    "story.title":"A goat, a coffee farm, and an Ethiopian legend",
+    "story.p1":"Legend has it that, hundreds of years ago in Ethiopia, a goat herder discovered coffee after noticing his goats had far more energy after eating the fruit of that plant.",
+    "story.p2":"So we wanted to give the goat the credit — and that's how Chivas got its name: a café that owes its story to a curious animal and a bean that changed the world.",
+    "gal.eyebrow":"A little peek",
+    "gal.title":"This is Chivas",
+    "gal.sub":"A taste of what's waiting for you inside, outside, and in the cup.",
+    "loc.eyebrow":"Where to find us",
+    "loc.title":"Two homes, one coffee",
+    "loc.sub":"Each location has its own hours and its own menu — check the one near you.",
+    "loc.monfri":"Monday – Friday",
+    "loc.satsun":"Saturday – Sunday",
+    "loc.alldays":"Monday – Sunday",
+    "loc.pital.addr":"Next to the CCSS lab (laboratorio CCSS), Pital, San Carlos, Alajuela, 21006.",
+    "loc.muelle.addr":"FH5H+RWV, San Francisco, Alajuela Province.",
+    "loc.map":"Get directions",
+    "loc.viewmenu":"See the Pital menu",
+    "loc.viewmenu2":"See the Muelle menu",
+    "menu.eyebrow":"The menu",
+    "menu.title":"What are you having today?",
+    "menu.fx":"Prices shown in Costa Rican colones (₡). The USD amount is a rough approximation (₡520 ≈ $1), not an official exchange rate.",
+    "footer.tagline":"Pital &amp; Muelle, San Carlos, Costa Rica.",
+    "footer.note":"Includes 13% tax. Service charge (10%) not included."
+  }
+};
+
+let currentLang = 'es';
+let currentLoc = 'pital';
+let currentCat = 0;
+
+function setLang(lang){
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  document.getElementById('btnES').classList.toggle('active', lang==='es');
+  document.getElementById('btnEN').classList.toggle('active', lang==='en');
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const key = el.getAttribute('data-i18n');
+    if(I18N[lang][key] !== undefined) el.innerHTML = I18N[lang][key];
+  });
+  renderMenu();
+  renderGallery();
+}
+
+/* ============================================================
+   MENU DATA
+   name/desc given in es + en; price in colones (integer)
+   Some items have priceS/priceL (pequeño/grande) or priceGlass/priceBottle
+   ============================================================ */
+const MENUS = {
+pital: [
+  { cat:{es:"Café de Especialidad", en:"Specialty Coffee"}, items:[
+    {es:"Espresso",en:"Espresso",price:1500},
+    {es:"Cortado",en:"Cortado",price:1500},
+    {es:"Macchiato",en:"Macchiato",price:1500},
+    {es:"Café Viennois",en:"Café Viennois",price:1600},
+    {es:"Latte",en:"Latte",price:1600},
+    {es:"Flat White",en:"Flat White",price:1800},
+    {es:"Mokachino",en:"Mochaccino",de:"Con chocolate",den:"With chocolate",price:2000},
+    {es:"Café irlandés",en:"Irish Coffee",de:"Con whiskey",den:"With whiskey",price:3000},
+    {es:"Americano",en:"Americano",priceS:1250,priceL:1500},
+    {es:"Americano con leche",en:"Americano with Milk",priceS:1300,priceL:1600},
+    {es:"Capuchino",en:"Cappuccino",priceS:1600,priceL:1950},
+    {es:"Sabor adicional",en:"Extra Flavor Shot",de:"Canela, vainilla, caramelo, menta, avellanas o crema irlandesa",den:"Cinnamon, vanilla, caramel, mint, hazelnut or Irish cream",price:250},
+  ]},
+  { cat:{es:"Cafés Fríos", en:"Iced Coffees"}, items:[
+    {es:"Iced Coffee",en:"Iced Coffee",de:"Espresso, agua y hielo",den:"Espresso, water and ice",price:1600},
+    {es:"Iced Latte",en:"Iced Latte",de:"Espresso, leche y hielo",den:"Espresso, milk and ice",price:1800},
+    {es:"Iced Affogato",en:"Iced Affogato",de:"Espresso, helado y leche",den:"Espresso, ice cream and milk",price:2200},
+    {es:"Iced Saborizado",en:"Flavored Iced Coffee",de:"Moka, vainilla, menta, avellana, caramelo o amaretto",den:"Mocha, vanilla, mint, hazelnut, caramel or amaretto",price:2200},
+    {es:"Iced Oreo",en:"Iced Oreo",de:"Espresso, Oreo, leche y crema batida",den:"Espresso, Oreo, milk and whipped cream",price:2400},
+    {es:"Iced Chococream",en:"Iced Chococream",de:"Espresso, leche, chocolate y crema batida",den:"Espresso, milk, chocolate and whipped cream",price:2400},
+    {es:"Affogato",en:"Affogato",de:"Espresso y helado",den:"Espresso and ice cream",price:2400},
+    {es:"Frappé Clásico",en:"Classic Frappé",de:"Espresso, helado, leche y crema batida",den:"Espresso, ice cream, milk and whipped cream",price:2700},
+    {es:"Frappé Saborizado",en:"Flavored Frappé",de:"Moka, vainilla, menta, avellana, caramelo u oreo",den:"Mocha, vanilla, mint, hazelnut, caramel or Oreo",price:2950},
+  ]},
+  { cat:{es:"Bebidas Frías", en:"Cold Drinks"}, items:[
+    {es:"Smoothies",en:"Smoothies",de:"Fresa, mora, pitahaya, maracuyá, sandía, cas, mango, frutos rojos o piña con albahaca",den:"Strawberry, blackberry, dragonfruit, passionfruit, watermelon, cas, mango, berries or pineapple & basil",price:1800},
+    {es:"Milkshakes",en:"Milkshakes",de:"Fresa, chocolate, banano, caramelo, menta u oreo",den:"Strawberry, chocolate, banana, caramel, mint or Oreo",price:2700},
+    {es:"Limonada Chivas",en:"Limonada Chivas",price:2200},
+    {es:"Chocolate frío",en:"Iced Chocolate",price:1800},
+    {es:"Chocolate irlandés",en:"Irish Chocolate",price:2950},
+    {es:"Té Matcha",en:"Matcha Tea",price:1800},
+    {es:"Ruso Blanco",en:"White Russian",de:"Licor de café",den:"Coffee liqueur",price:3000},
+    {es:"Gaseosas",en:"Soft Drinks",price:1200},
+  ]},
+  { cat:{es:"Bebidas Calientes", en:"Hot Drinks"}, items:[
+    {es:"Agua dulce",en:"Agua Dulce (spiced cane-sugar drink)",price:1500},
+    {es:"Chocolate",en:"Hot Chocolate",price:1600},
+    {es:"Chocolate irlandés",en:"Irish Hot Chocolate",price:2950},
+    {es:"Té",en:"Tea",de:"Matcha, manzanilla, negro o chai",den:"Matcha, chamomile, black or chai",price:1700},
+    {es:"Dirty Chai",en:"Dirty Chai",price:1900},
+  ]},
+  { cat:{es:"Sandwiches", en:"Sandwiches"}, items:[
+    {es:"Pollo",en:"Chicken",de:"Pollo desmechado, queso mozzarella, lechuga, cebolla morada, tomate, salsa de tomate, aderezo de la casa y chips",den:"Shredded chicken, mozzarella, lettuce, red onion, tomato, ketchup, house dressing and chips",price:3600},
+    {es:"Carne",en:"Beef",de:"Carne desmechada, queso mozzarella, lechuga, cebolla morada, tomate, salsa de tomate, aderezo de la casa y chips",den:"Shredded beef, mozzarella, lettuce, red onion, tomato, ketchup, house dressing and chips",price:3800},
+    {es:"Croissant de Sandwich",en:"Sandwich Croissant",de:"Croissant, jamón estilo hawaiano, queso mozzarella, albahaca, lechuga, tomate cherry, aderezo de la casa y chips",den:"Croissant, Hawaiian-style ham, mozzarella, basil, lettuce, cherry tomato, house dressing and chips",price:3600},
+    {es:"Tuna Sandwich",en:"Tuna Sandwich",de:"Pan ciabatta, queso cheddar, atún, jalapeño, maíz dulce y cebolla morada",den:"Ciabatta bread, cheddar, tuna, jalapeño, sweet corn and red onion",price:4000},
+    {es:"Jamón y Queso",en:"Ham & Cheese",de:"Pan cuadrado de masa madre, guacamole, jamón especial y queso Monterrey Jack",den:"Sourdough sandwich bread, guacamole, special ham and Monterey Jack cheese",price:3500},
+  ]},
+  { cat:{es:"Acompañamientos", en:"Sides"}, items:[
+    {es:"Wrap de pollo",en:"Chicken Wrap",de:"Pollo desmechado, frijoles molidos, queso mozzarella, tomate, lechuga y aderezo de la casa",den:"Shredded chicken, refried beans, mozzarella, tomato, lettuce and house dressing",price:3600},
+    {es:"Wrap de carne",en:"Beef Wrap",de:"Carne desmechada, frijoles molidos, queso mozzarella, tomate, lechuga y aderezo de la casa",den:"Shredded beef, refried beans, mozzarella, tomato, lettuce and house dressing",price:3800},
+    {es:"Tostada de pollo con guacamole",en:"Chicken & Guacamole Toast",price:3500},
+    {es:"Tostada Caprese",en:"Caprese Toast",de:"Pan de masa madre, queso mozzarella fresco, tomate, albahaca y aceite de oliva",den:"Sourdough bread, fresh mozzarella, tomato, basil and olive oil",price:3500},
+    {es:"Tostada Pizzera",en:"Pizza-style Toast",de:"Pan de masa madre, jamón especial, tomate, queso mozzarella y chile dulce",den:"Sourdough bread, special ham, tomato, mozzarella and sweet pepper",price:3500},
+    {es:"Tostaditas",en:"Chips & Dip",de:"Con natilla",den:"With sour cream",price:2500},
+    {es:"Palitos de queso",en:"Cheese Sticks",price:2500},
+    {es:"Tortilla aliñada",en:"Seasoned Tortilla",de:"Con natilla",den:"With sour cream",price:2500},
+    {es:"Tortilla aliñada Chivas",en:"Tortilla Aliñada Chivas",de:"Tortilla aliñada, frijol molido, carne desmechada y lechuga",den:"Seasoned tortilla, refried beans, shredded beef and lettuce",price:3700},
+    {es:"Almojábana colombiana",en:"Colombian Almojábana",price:1000},
+  ]},
+  { cat:{es:"Crepas", en:"Crêpes"}, items:[
+    {es:"Crepa de Fresas",en:"Strawberry Crêpe",price:3000},
+    {es:"Crepa de Banano",en:"Banana Crêpe",price:2900},
+    {es:"Crepa de Melocotón",en:"Peach Crêpe",de:"Relleno a elegir: Nutella, leche condensada, chocolate, caramelo o mantequilla de maní",den:"Choice of filling: Nutella, condensed milk, chocolate, caramel or peanut butter",price:3000},
+    {es:"Nutella, banano y coco rayado",en:"Nutella, Banana & Shredded Coconut",price:3300},
+    {es:"Queso crema y mermelada de frutos rojos",en:"Cream Cheese & Berry Jam",price:3300},
+    {es:"Adicional helado",en:"Extra Ice Cream Scoop",price:600},
+  ]},
+  { cat:{es:"Helados", en:"Ice Cream"}, items:[
+    {es:"Cono sencillo",en:"Single Cone",de:"Una bola de helado",den:"One scoop of ice cream",price:1000},
+    {es:"Cono doble",en:"Double Cone",de:"Dos bolas de helado",den:"Two scoops of ice cream",price:1500},
+    {es:"Croissant de Nutella con Helado",en:"Nutella Croissant with Ice Cream",price:2500},
+    {es:"Ensalada de frutas",en:"Fruit Salad",de:"Fresa, banano, melocotón, helado, crema chantillí y topping de chocolate",den:"Strawberry, banana, peach, ice cream, whipped cream and chocolate topping",price:3000},
+    {es:"Banana Split",en:"Banana Split",de:"Banano, tres bolas de helado, crema chantillí y chocolate o caramelo",den:"Banana, three scoops of ice cream, whipped cream and chocolate or caramel",price:3300},
+    {es:"Waffle de Frutas",en:"Fruit Waffle",de:"Fresa, banano, melocotón, helado y nutella",den:"Strawberry, banana, peach, ice cream and Nutella",price:3600},
+  ]},
+],
+muelle: [
+  { cat:{es:"Café Caliente", en:"Hot Coffee"}, items:[
+    {es:"Espresso",en:"Espresso",price:1000},
+    {es:"Doble Espresso",en:"Double Espresso",price:1500},
+    {es:"Americano",en:"Americano",priceS:1250,priceL:1500},
+    {es:"Americano con leche",en:"Americano with Milk",priceS:1300,priceL:1600},
+    {es:"Cortado",en:"Cortado",price:1500},
+    {es:"Macchiato",en:"Macchiato",price:1500},
+    {es:"Latte",en:"Latte",price:1600},
+    {es:"Capuccino",en:"Cappuccino",priceS:1600,priceL:1950},
+    {es:"Flat White",en:"Flat White",price:1950},
+    {es:"Mocaccino",en:"Mocaccino",price:2000},
+    {es:"Café irlandés",en:"Irish Coffee",price:3000},
+  ]},
+  { cat:{es:"Café Frío", en:"Iced Coffee"}, items:[
+    {es:"Iced Americano",en:"Iced Americano",price:1700},
+    {es:"Iced Latte",en:"Iced Latte",price:1800},
+    {es:"Iced Latte saborizado",en:"Flavored Iced Latte",de:"Moka, vainilla, menta, avellanas o caramelo",den:"Mocha, vanilla, mint, hazelnut or caramel",price:2200},
+    {es:"Frappé",en:"Frappé",price:2700},
+    {es:"Frappé saborizado",en:"Flavored Frappé",de:"Moka, vainilla, menta, avellanas, oreo o caramelo",den:"Mocha, vanilla, mint, hazelnut, Oreo or caramel",price:2950},
+    {es:"Affogato",en:"Affogato",price:2400},
+  ]},
+  { cat:{es:"Bebidas Calientes", en:"Hot Drinks"}, items:[
+    {es:"Chocolate",en:"Hot Chocolate",price:2000},
+    {es:"Agua dulce",en:"Agua Dulce (spiced cane-sugar drink)",price:1500},
+    {es:"Dirty Chai",en:"Dirty Chai",price:1900},
+    {es:"Matcha",en:"Matcha",price:2000},
+    {es:"Té",en:"Tea",de:"Manzanilla, menta, negro o chai",den:"Chamomile, mint, black or chai",price:1700},
+  ]},
+  { cat:{es:"Bebidas Frías", en:"Cold Drinks"}, items:[
+    {es:"Limonada Chivas",en:"Limonada Chivas",price:2200},
+    {es:"Jugo de naranja",en:"Orange Juice",price:1800},
+    {es:"Chocolate frío",en:"Iced Chocolate",price:2000},
+    {es:"Iced Matcha",en:"Iced Matcha",price:2000},
+    {es:"Agua embotellada",en:"Bottled Water",price:1100},
+    {es:"Gaseosas",en:"Soft Drinks",price:1200},
+    {es:"Naturales",en:"Fresh Fruit Drinks",de:"Fresa, mora, maracuyá, piña, mango, cas, sandía o frutos rojos",den:"Strawberry, blackberry, passionfruit, pineapple, mango, cas, watermelon or berries",price:1800},
+    {es:"Milkshake",en:"Milkshake",de:"Fresa, banano, menta, chocolate, caramelo u oreo",den:"Strawberry, banana, mint, chocolate, caramel or Oreo",price:2700},
+    {es:"Batido de proteína",en:"Protein Shake",price:2500},
+  ]},
+  { cat:{es:"Cervezas", en:"Beer"}, items:[
+    {es:"Imperial",en:"Imperial",price:1500},
+    {es:"Imperial Light",en:"Imperial Light",price:1500},
+    {es:"Corona",en:"Corona",price:2000},
+  ]},
+  { cat:{es:"Whiskey", en:"Whiskey"}, items:[
+    {es:"Jameson",en:"Jameson",price:2000},
+    {es:"Buchanan's 12",en:"Buchanan's 12",price:2500},
+    {es:"Old Parr 18",en:"Old Parr 18",price:4000},
+  ]},
+  { cat:{es:"Vino & Cócteles", en:"Wine & Cocktails"}, items:[
+    {es:"Vino tinto (Malbec)",en:"Red Wine (Malbec)",priceGlass:4000,priceBottle:13000},
+    {es:"Vino blanco (Pinot Grigio)",en:"White Wine (Pinot Grigio)",priceGlass:4000,priceBottle:13000},
+    {es:"Espumante (Prosecco)",en:"Sparkling (Prosecco)",priceGlass:4000,priceBottle:13000},
+    {es:"Ruso blanco",en:"White Russian",price:3000},
+    {es:"Gin Tonic",en:"Gin & Tonic",price:3800},
+    {es:"Aperol Spritz",en:"Aperol Spritz",price:3800},
+    {es:"Sangría",en:"Sangria",price:3500},
+  ]},
+  { cat:{es:"Entradas", en:"Starters"}, items:[
+    {es:"Ensalada Caprese",en:"Caprese Salad",price:3000},
+    {es:"Tabla de quesos",en:"Cheese Board",price:6000},
+  ]},
+  { cat:{es:"Platos Fuertes", en:"Main Dishes"}, items:[
+    {es:"New York Steak",en:"New York Steak",de:"Jugoso corte a la parrilla, cocinado a tu preferencia, con verduras salteadas y papa gratinada",den:"Juicy grilled cut, cooked to your liking, with sautéed vegetables and gratin potato",price:10450},
+    {es:"Churrasco",en:"Churrasco",de:"Corte estilo mariposa a la parrilla con verduras salteadas y papa gratinada",den:"Butterfly-cut grilled steak with sautéed vegetables and gratin potato",price:10450},
+    {es:"Pasta en salsa pomodoro",en:"Pasta in Pomodoro Sauce",de:"Pasta bañada en salsa casera de tomate con hongos salteados y queso parmesano",den:"Pasta in homemade tomato sauce with sautéed mushrooms and parmesan",price:5200},
+    {es:"Ensalada de pollo",en:"Chicken Salad",de:"Lechuga fresca, crutones, aderezo César, parmesano y pollo a la plancha",den:"Fresh lettuce, croutons, Caesar dressing, parmesan and grilled chicken",price:4950},
+    {es:"Pechuga de pollo gratinada",en:"Gratin Chicken Breast",de:"Con salsa pomodoro y mozzarella gratinada, puré de papa y verduras salteadas",den:"With pomodoro sauce and gratin mozzarella, mashed potato and sautéed vegetables",price:5500},
+    {es:"Hamburguesa",en:"Burger",de:"Pan artesanal, torta Angus, tocineta caramelizada, pepinillos y salsa stacker de la casa",den:"Artisan bun, Angus patty, caramelized bacon, pickles and house stacker sauce",price:5800},
+  ]},
+  { cat:{es:"Sandwiches", en:"Sandwiches"}, items:[
+    {es:"Sandwich de pollo desmechado",en:"Shredded Chicken Sandwich",de:"Queso mozzarella derretido, cebolla morada, lechuga, tomate, salsa de tomate, aderezo de la casa y chips",den:"Melted mozzarella, red onion, lettuce, tomato, ketchup, house dressing and chips",price:3800},
+    {es:"Sandwich de carne desmechada",en:"Shredded Beef Sandwich",de:"Queso mozzarella derretido, cebolla morada, lechuga, tomate, salsa de tomate, aderezo de la casa y chips",den:"Melted mozzarella, red onion, lettuce, tomato, ketchup, house dressing and chips",price:3800},
+    {es:"Croissant de jamón y queso",en:"Ham & Cheese Croissant",de:"Croissant horneado con jamón especial y mozzarella fundida",den:"Baked croissant with special ham and melted mozzarella",price:3900},
+    {es:"Ciabatta de atún",en:"Tuna Ciabatta",de:"Atún, queso cheddar derretido, maíz dulce, cebolla morada y jalapeño",den:"Tuna, melted cheddar, sweet corn, red onion and jalapeño",price:4000},
+  ]},
+  { cat:{es:"Acompañamientos", en:"Sides"}, items:[
+    {es:"Wrap de pollo",en:"Chicken Wrap",de:"Pollo desmechado, frijoles molidos, queso mozzarella, tomate, lechuga y aderezo de la casa",den:"Shredded chicken, refried beans, mozzarella, tomato, lettuce and house dressing",price:3800},
+    {es:"Wrap de carne",en:"Beef Wrap",de:"Carne desmechada, frijoles molidos, queso mozzarella, tomate, lechuga y aderezo de la casa",den:"Shredded beef, refried beans, mozzarella, tomato, lettuce and house dressing",price:3800},
+    {es:"Tostada de pollo con guacamole",en:"Chicken & Guacamole Toast",de:"Pan de masa madre",den:"Sourdough bread",price:3500},
+    {es:"Tostada Caprese",en:"Caprese Toast",de:"Pan de masa madre",den:"Sourdough bread",price:3500},
+    {es:"Tostada Pizzera",en:"Pizza-style Toast",de:"Pan de masa madre",den:"Sourdough bread",price:3500},
+    {es:"Tortilla aliñada",en:"Seasoned Tortilla",de:"Con natilla",den:"With sour cream",price:2500},
+    {es:"Palitos de queso",en:"Cheese Sticks",price:2500},
+    {es:"Tostaditas",en:"Chips & Dip",price:2500},
+  ]},
+  { cat:{es:"Crepas & Postres", en:"Crêpes & Desserts"}, items:[
+    {es:"Crepa de fresa",en:"Strawberry Crêpe",price:3000},
+    {es:"Crepa de melocotón",en:"Peach Crêpe",price:3000},
+    {es:"Crepa de banano",en:"Banana Crêpe",price:2900},
+    {es:"Adicional helado",en:"Extra Ice Cream Scoop",price:600},
+    {es:"Piña caramelizada a la parrilla",en:"Grilled Caramelized Pineapple",de:"Con helado",den:"With ice cream",price:2500},
+    {es:"Brownie con helado",en:"Brownie with Ice Cream",price:2500},
+  ]},
+  { cat:{es:"Helados", en:"Ice Cream"}, items:[
+    {es:"Copa de helados",en:"Ice Cream Cup",price:1500},
+    {es:"Croissant de nutella con helado",en:"Nutella Croissant with Ice Cream",price:2500},
+    {es:"Banana Split",en:"Banana Split",price:3300},
+  ]},
+]
+};
+
+/* ============================================================
+   RENDERING
+   ============================================================ */
+const FX_RATE = 520;
+function usd(price){
+  const val = Math.round((price/FX_RATE)*4)/4;
+  return '$' + val.toFixed(2);
+}
+function crc(n){
+  return '\u20A1' + n.toLocaleString('es-CR');
+}
+
+function setLoc(loc){
+  currentLoc = loc;
+  currentCat = 0;
+  document.getElementById('locPitalBtn').classList.toggle('active', loc==='pital');
+  document.getElementById('locMuelleBtn').classList.toggle('active', loc==='muelle');
+  renderMenu();
+}
+
+function renderCatPills(){
+  const cats = MENUS[currentLoc];
+  const wrap = document.getElementById('catPills');
+  wrap.innerHTML = '';
+  const allBtn = document.createElement('button');
+  allBtn.textContent = currentLang==='es' ? 'Todo' : 'All';
+  allBtn.className = currentCat===-1 ? 'active':'';
+  allBtn.onclick = ()=>{ currentCat=-1; renderMenuGrid(); renderCatPillsActive(); };
+  wrap.appendChild(allBtn);
+  cats.forEach((c,i)=>{
+    const b = document.createElement('button');
+    b.textContent = c.cat[currentLang];
+    b.className = (currentCat===i) ? 'active':'';
+    b.onclick = ()=>{ currentCat=i; renderMenuGrid(); renderCatPillsActive(); };
+    wrap.appendChild(b);
+  });
+}
+function renderCatPillsActive(){
+  const wrap = document.getElementById('catPills');
+  [...wrap.children].forEach((btn,i)=>{
+    btn.classList.toggle('active', (i===0 && currentCat===-1) || (i-1===currentCat));
+  });
+}
+
+function renderMenuGrid(){
+  const cats = MENUS[currentLoc];
+  const grid = document.getElementById('menuGrid');
+  grid.innerHTML = '';
+  cats.forEach((c,i)=>{
+    if(currentCat!==-1 && currentCat!==i) return;
+    const catDiv = document.createElement('div');
+    catDiv.className = 'menu-cat';
+    const h3 = document.createElement('h3');
+    h3.textContent = c.cat[currentLang];
+    catDiv.appendChild(h3);
+    c.items.forEach(it=>{
+      const row = document.createElement('div');
+      row.className = 'menu-item';
+      const left = document.createElement('div');
+      left.className = 'mi-left';
+      const name = document.createElement('div');
+      name.className = 'mi-name';
+      name.textContent = currentLang==='es' ? it.es : it.en;
+      left.appendChild(name);
+      const descTxt = currentLang==='es' ? it.de : it.den;
+      if(descTxt){
+        const desc = document.createElement('div');
+        desc.className = 'mi-desc';
+        desc.textContent = descTxt;
+        left.appendChild(desc);
+      }
+      const right = document.createElement('div');
+      right.className = 'mi-right';
+      if(it.priceGlass){
+        right.innerHTML = `<div class="mi-two">${currentLang==='es'?'Copa':'Glass'} ${crc(it.priceGlass)} <span class="mi-usd">(${usd(it.priceGlass)})</span></div>
+          <div class="mi-two">${currentLang==='es'?'Botella':'Bottle'} ${crc(it.priceBottle)} <span class="mi-usd">(${usd(it.priceBottle)})</span></div>`;
+      } else if(it.priceS){
+        right.innerHTML = `<div class="mi-two">P ${crc(it.priceS)} <span class="mi-usd">(${usd(it.priceS)})</span></div>
+          <div class="mi-two">G ${crc(it.priceL)} <span class="mi-usd">(${usd(it.priceL)})</span></div>`;
+      } else {
+        right.innerHTML = `<div class="mi-crc">${crc(it.price)}</div><div class="mi-usd">${usd(it.price)}</div>`;
+      }
+      row.appendChild(left);
+      row.appendChild(right);
+      catDiv.appendChild(row);
+    });
+    grid.appendChild(catDiv);
+  });
+}
+
+function renderMenu(){
+  renderCatPills();
+  renderMenuGrid();
+}
+
+/* ============================================================
+   GALLERY
+   Add photos here as {src:"assets/yourfile.jpg", alt:"..."}.
+   Once real photos are added, this array is the only thing
+   that needs updating — the grid + lightbox render automatically.
+   ============================================================ */
+const GALLERY_PHOTOS = [
+  { src:"assets/gallery/pital-exterior.jpg", alt:"Fachada de Chivas Pital al atardecer" },
+  { src:"assets/gallery/muelle-counter.jpg", alt:"Barra de café de Chivas Muelle" },
+  { src:"assets/gallery/pital-irish-coffee.jpg", alt:"Café irlandés de Chivas" },
+  { src:"assets/gallery/pital-interior.jpg", alt:"Interior de Chivas Pital" },
+  { src:"assets/gallery/muelle-pasta.jpg", alt:"Pasta y platos fuertes en Chivas Muelle" },
+  { src:"assets/gallery/pital-smoothie.jpg", alt:"Smoothie natural de Chivas Pital" },
+  { src:"assets/gallery/pital-bakery-case.jpg", alt:"Vitrina de repostería en Chivas Pital" },
+  { src:"assets/gallery/muelle-latte.jpg", alt:"Latte art en Chivas Muelle" },
+  { src:"assets/gallery/pital-sandwich.jpg", alt:"Sandwiches y café en Chivas Pital" },
+  { src:"assets/gallery/muelle-menu-table.jpg", alt:"Mesa y menú en Chivas Muelle" },
+];
+
+function renderGallery(){
+  const grid = document.getElementById('galleryGrid');
+  grid.innerHTML = '';
+  if(GALLERY_PHOTOS.length === 0){
+    const empty = document.createElement('div');
+    empty.className = 'gallery-empty';
+    empty.textContent = currentLang==='es'
+      ? 'Pronto vas a ver fotos reales de Chivas por aquí.'
+      : "Real photos of Chivas are coming soon.";
+    grid.appendChild(empty);
+    return;
+  }
+  GALLERY_PHOTOS.forEach((photo, i)=>{
+    const fig = document.createElement('figure');
+    const img = document.createElement('img');
+    img.src = photo.src;
+    img.alt = photo.alt || 'Chivas Cafetería';
+    img.loading = 'lazy';
+    fig.appendChild(img);
+    fig.addEventListener('click', ()=> openLightbox(i));
+    grid.appendChild(fig);
+  });
+}
+
+let lbIndex = 0;
+function openLightbox(i){
+  lbIndex = i;
+  updateLightbox();
+  document.getElementById('lightbox').classList.add('open');
+}
+function updateLightbox(){
+  const photo = GALLERY_PHOTOS[lbIndex];
+  const img = document.getElementById('lbImg');
+  img.src = photo.src;
+  img.alt = photo.alt || 'Chivas Cafetería';
+}
+function closeLightbox(){
+  document.getElementById('lightbox').classList.remove('open');
+}
+document.getElementById('lbClose').addEventListener('click', closeLightbox);
+document.getElementById('lightbox').addEventListener('click', (e)=>{
+  if(e.target.id === 'lightbox') closeLightbox();
+});
+document.getElementById('lbPrev').addEventListener('click', ()=>{
+  lbIndex = (lbIndex - 1 + GALLERY_PHOTOS.length) % GALLERY_PHOTOS.length;
+  updateLightbox();
+});
+document.getElementById('lbNext').addEventListener('click', ()=>{
+  lbIndex = (lbIndex + 1) % GALLERY_PHOTOS.length;
+  updateLightbox();
+});
+document.addEventListener('keydown', (e)=>{
+  if(!document.getElementById('lightbox').classList.contains('open')) return;
+  if(e.key === 'Escape') closeLightbox();
+  if(e.key === 'ArrowLeft') document.getElementById('lbPrev').click();
+  if(e.key === 'ArrowRight') document.getElementById('lbNext').click();
+});
+
+/* ============================================================
+   NAV / BURGER
+   ============================================================ */
+document.getElementById('burgerBtn').addEventListener('click', ()=>{
+  document.getElementById('navLinks').classList.toggle('open');
+});
+document.querySelectorAll('#navLinks a').forEach(a=>{
+  a.addEventListener('click', ()=> document.getElementById('navLinks').classList.remove('open'));
+});
+
+/* init */
+currentCat = -1;
+renderMenu();
+renderGallery();
+</script>
+</body>
+</html>
